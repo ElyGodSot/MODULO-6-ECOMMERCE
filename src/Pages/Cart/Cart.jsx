@@ -1,22 +1,23 @@
-import DetailCardComp from "../../Components/DetailCardComp"
+
 import { ItemsProvider } from "../../Context/ItemsContext"
 import HeadComp from "../../Components/HeadComp"
+import CartComp from "../../Components/CartComp"
 import MultipleCardComp from "../../Components/MultipleCardComp"
-import './Detail.css'
+
 
 const Detail = () => {
     return (
       
-    <ItemsProvider>
+        <ItemsProvider>
 
         <HeadComp></HeadComp>
-        <div className="DetailPage">
+        <div className="CartPage">
           <div className="first">
           <MultipleCardComp></MultipleCardComp>
           </div>
 
           <div className="second">
-          <DetailCardComp></DetailCardComp>
+          <CartComp></CartComp>
           </div>
         </div>
 
@@ -28,4 +29,3 @@ const Detail = () => {
 }
 
 export default Detail
-

@@ -1,4 +1,6 @@
 import { useItemsContext } from "../../Hook/useItemsContext"
+import './HeadComp.css'
+import { NavLink } from "react-router-dom"
 
 const HeadComp = () => {
     const { list, setSearch } = useItemsContext()
@@ -20,6 +22,7 @@ const handleSearch = (e) => {
                     placeholder='Search an item...'
                     onChange={handleSearch}
                   />
+                  <NavLink to={`/carrito`}>Carrito</NavLink>
     
                  
     

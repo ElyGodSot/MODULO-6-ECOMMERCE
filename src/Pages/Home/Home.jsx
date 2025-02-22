@@ -17,6 +17,7 @@ const Home = () => {
             <MultipleCardComp></MultipleCardComp>
         </div>
     </div>
+    
     </ItemsProvider>
 
 
