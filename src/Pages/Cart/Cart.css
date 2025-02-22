@@ -1,0 +1,22 @@
+.CartPage{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+    min-height: 100vh;
+    color: #d8d8d8;
+}
+
+.first {
+    flex: 3; /* Permite que ambas secciones ocupen el mismo espacio */
+    background-color: #333333;
+    border-right: 1px solid #555555; /* Añade una línea divisoria */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.second {
+    flex: 1; /* Permite que ambas secciones ocupen el mismo espacio */
+    background-color: #444444;
+    border-left: 1px solid #555555; /* Añade una línea divisoria */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}

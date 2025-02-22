@@ -12,9 +12,7 @@ const handleSearch = (e) => {
       return (
         <>
           <div className='header__container'>
-            {
-            list.length > 0
-              ? (
+           
                 <>
                   <input
                     className='header__input-search'
@@ -28,9 +26,7 @@ const handleSearch = (e) => {
     
                   
                 </>
-                )
-              : <h2>Cargando...</h2>
-            }
+            
           </div>
         </>
       )

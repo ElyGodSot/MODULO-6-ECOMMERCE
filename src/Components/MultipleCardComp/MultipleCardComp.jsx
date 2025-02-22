@@ -18,14 +18,14 @@ const MultipleCardComp = () => {
   return (
     <section className='row-container'>
       {
-            loading
-              ? <h2>Cargando...</h2>
-              : filteredItemsList.map((item) => (
+            filteredItemsList.map((item) => (
                 <article
                   key={item.id}
                   className='row-item'
                   onClick={() => {
                     setSelectedItem(item)
+                    
+                    
                     
                   }}
                 >
