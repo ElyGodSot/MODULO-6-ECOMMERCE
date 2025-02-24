@@ -1,0 +1,21 @@
+.row-container {
+    display: flex;            
+    flex-wrap: wrap;         
+    justify-content: flex-start; 
+    height: 100vh;
+    overflow: scroll; 
+  }
+  
+
+  .row-container::-webkit-scrollbar {
+    height: 8px;          
+  }
+  
+  .row-container::-webkit-scrollbar-thumb {
+    background-color: #888;  
+    border-radius: 4px;     
+  }
+  
+  .row-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+  }

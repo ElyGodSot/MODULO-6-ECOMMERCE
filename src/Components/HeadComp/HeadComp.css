@@ -17,3 +17,6 @@
     background-color: #1c2025;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
+.header__input-search{
+    width: 33%;
+}

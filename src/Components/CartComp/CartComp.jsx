@@ -14,15 +14,17 @@ const CartComp = () => {
     useEffect(() => {
         if (carrito.length > 0) {
         localStorage.setItem("carritolocal", JSON.stringify(carrito))
-        }
-          }, [carrito])
+        }else{
+          localStorage.removeItem("carritolocal")
+          }}, [carrito])
 
 
 
         function eliminar(ideliminar){
 
-            let carritofiltrado = carrito.filter((item,index)=>ideliminar!=index)
+            let carritofiltrado = carrito.filter((item,index)=>ideliminar!==index)
             SetCarrito(carritofiltrado)}
+            
   
 
   return (

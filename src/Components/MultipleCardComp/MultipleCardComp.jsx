@@ -1,6 +1,8 @@
 import { useItemsContext } from "../../Hook/useItemsContext"
 import { NavLink } from "react-router-dom"
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './MultipleCardComp.css'
 
 
 
@@ -29,16 +31,19 @@ const MultipleCardComp = () => {
                     
                   }}
                 >
-                  <h3>{item.product_name}</h3>
-                  <h3>{item.description}</h3>
 
-                  <Card style={{ width: '18rem' }}>
-      
+
+                  <Card style={{ width: '11rem' }}>
+      <Card.Img variant="top" src={item.image} style={{ width: '150px', height: 'auto'}}/>
       <Card.Body>
-        <Card.Title><NavLink to={`/articulo/${item.product_name}/${item.id}`}>más detalles</NavLink></Card.Title>
-      
+        <Card.Title>{item.product_name}</Card.Title>
+        <Card.Text>
+        <h4>$ {item.price}</h4>
+        </Card.Text>
+        <NavLink to={`/articulo/${item.product_name}/${item.id}`}>más detalles</NavLink>
       </Card.Body>
     </Card>
+
                   
                 </article>
               ))
