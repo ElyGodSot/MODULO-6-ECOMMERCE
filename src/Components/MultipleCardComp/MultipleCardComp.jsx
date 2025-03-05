@@ -15,8 +15,6 @@ const MultipleCardComp = () => {
         return item.product_name.toLowerCase().includes(search.toLowerCase())
       })
 
-
-
   return (
     <section className='row-container'>
       {

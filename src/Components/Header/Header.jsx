@@ -1,39 +1,19 @@
-import { useItemsContext } from "../../Hook/useItemsContext"
-import './HeadComp.css'
+
+
 import { NavLink } from "react-router-dom"
 import { useAuthContext } from "../../Hook/useAuthContext"
-import { useLocation } from 'react-router-dom'; // Importar useLocation
 
-const HeadComp = () => {
-    const { list, setSearch } = useItemsContext()
+const Header = () => {
     const {logout, isAuth} = useAuthContext();
-    const location = useLocation(); // Obtener la ruta actual
     const linkIsActive = (isActive) => isActive ? "header__item-link header__item-link--is-active" : "header__item-link"
-    
+  
 
-const handleSearch = (e) => {
-        setSearch(e.target.value)
-      }
-
-      const shouldShowSearch = !(location.pathname === '/login' || location.pathname === '/signup');
 
       return (
         <>
           <div className='header__container'>
            
                 <>
-                    {/* Mostrar el input solo si no estamos en /login o /signup */}
-                    {shouldShowSearch && (
-                        <input
-                            className='header__input-search'
-                            type='search'
-                            placeholder='Search an item...'
-                            onChange={handleSearch}
-                        />
-                    )}
-                  <NavLink to={`/carrito`}>Carrito</NavLink>
-        
-
 
                   <nav className="header"> {/* BLOQUE */}
         <NavLink className="header__logo">LOGO</NavLink>
@@ -80,4 +60,4 @@ const handleSearch = (e) => {
       )
     }
 
-export default HeadComp
+export default Header
