@@ -23,9 +23,10 @@ const Signup = () => {
 
   return (
    <> 
-               <HeadComp></HeadComp>
-      
-     <h1>Signup</h1>
+                <div className='Head'>
+            <HeadComp></HeadComp>
+            </div>
+     <h1></h1>
     <main className='form-signin w-100 m-auto'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1 className='h3 mb-3 fw-normal'>Please sign up</h1>
@@ -71,6 +72,8 @@ const Signup = () => {
           <label htmlFor='gender'>Gender</label>
         </div>
 
+ 
+
         <div className='form-floating'>
           <input
             type='email'
@@ -98,7 +101,7 @@ const Signup = () => {
         </div>
 
         <button className='w-100 btn btn-outline-primary' type='submit'>Sign up</button>
-        <p className='mt-5 mb-3 text-muted'>© 2017–2025</p>
+        
       </form>
     </main>
    </>

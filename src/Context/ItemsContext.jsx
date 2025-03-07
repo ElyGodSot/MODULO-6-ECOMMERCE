@@ -11,6 +11,17 @@ function ItemsProvider ({children}){
     const [search, setSearch] = useState('')
     const [carrito, SetCarrito]= useState([])
     const location = useLocation();
+      const [product, setProduct] = useState({
+        product_name: '',
+        description: '',
+        price: '',
+        category: '',
+        brand: '',
+        sku: '',
+        image: '',
+      });
+
+   
     
     useEffect(() => {
       setLoading(true);
@@ -21,6 +32,11 @@ function ItemsProvider ({children}){
       },[location])
 
 
+
+
+
+
+
       const data = {
         list,
         loading,
@@ -29,7 +45,9 @@ function ItemsProvider ({children}){
         search,
         setSearch,
         carrito,
-        SetCarrito
+        SetCarrito,
+        product,
+        setProduct
       }
       
     // el proveedor (provider) es un componente que envuelve a otros componentes

@@ -3,17 +3,32 @@ import { NavLink } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './MultipleCardComp.css'
+import { useEffect } from "react";
 
 
 
 
 const MultipleCardComp = () => {
-    const { list, loading, setSelectedItem, search, selectedItem } = useItemsContext()
+    const { list, loading, setSelectedItem, search, selectedItem, product, setList,setProduct } = useItemsContext()
+
+   
+   
+    useEffect(() => {
+      const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
+      setProduct(storedProducts);
+    }, []);
+
+
+
 
 
     const filteredItemsList = list.filter((item) => {
         return item.product_name.toLowerCase().includes(search.toLowerCase())
       })
+
+
+
+    
 
   return (
     <section className='row-container'>
@@ -45,7 +60,14 @@ const MultipleCardComp = () => {
                   
                 </article>
               ))
+
+
+
+
+              
         }
+
+
 
 
         

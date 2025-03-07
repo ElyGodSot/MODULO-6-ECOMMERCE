@@ -8,10 +8,10 @@
 }
 
 .second {
-    flex: 1; /* Permite que ambas secciones ocupen el mismo espacio */
+    flex: 1; 
     width: 350px;
     background-color: #444444;
-    border-left: 1px solid #555555; /* Añade una línea divisoria */
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    border-left: 1px solid #555555;
+    transition: background-color 0.3s ease;
    
 }

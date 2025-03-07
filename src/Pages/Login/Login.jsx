@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { loginUserService } from '../../Service/userService'
 import { useAuthContext } from '../../Hook/useAuthContext'
 import HeadComp from '../../Components/HeadComp'
+import './Login.css';
 
 
 const Login = () => {
@@ -27,15 +28,16 @@ const Login = () => {
 
   return (
     <>
+    <div className='Head'>
             <HeadComp></HeadComp>
+            </div>
  
-    <h1>Login</h1>
     <main className='form-signin w-100 m-auto'>
       <form onSubmit={handleSubmit(onSubmit)}>
        
 
        
-        <h1 className='h3 mb-3 fw-normal'>Please sign in</h1>
+        <h1 className='h3 mb-3 fw-normal'>Please log in</h1>
         <div className='form-floating'>
           <input
             type='email'
@@ -60,7 +62,7 @@ const Login = () => {
         </div>
 
         <button className='btn btn-outline-primary w-100 py-2' type='submit'>
-          Sign in
+          Log in
         </button>
         <p className='mt-5 mb-3 text-body-secondary'>© 2017–2025</p>
       </form>

@@ -15,7 +15,7 @@ const handleSearch = (e) => {
         setSearch(e.target.value)
       }
 
-      const shouldShowSearch = !(location.pathname === '/login' || location.pathname === '/signup');
+      const shouldShowSearch = !(location.pathname === '/login' || location.pathname === '/signup'|| location.pathname === '/secret');
 
       return (
         <>
@@ -31,12 +31,10 @@ const handleSearch = (e) => {
                             onChange={handleSearch}
                         />
                     )}
-                  <NavLink to={`/carrito`}>Carrito</NavLink>
         
 
 
                   <nav className="header"> {/* BLOQUE */}
-        <NavLink className="header__logo">LOGO</NavLink>
         <ul className="header__nav-list" />
         <li className="header__list-item">
             <NavLink className={({ isActive }) => linkIsActive(isActive)} to="/">Home</NavLink>

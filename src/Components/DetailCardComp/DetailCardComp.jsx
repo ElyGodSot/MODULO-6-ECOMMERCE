@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { useAuthContext } from "../../Hook/useAuthContext"
+import { useNavigate } from 'react-router-dom';
+import  './DetailCardComp.css'
 
 
 
@@ -12,11 +14,20 @@ const DetailCardComp = () => {
 
     const {selectedItem, list, carrito, SetCarrito}= useItemsContext()
     const {articulo, id}=useParams();
+    const {logout, isAuth} = useAuthContext();
+    const navigate = useNavigate();
 
     const newarray= list.filter((elemento)=>{
       return elemento.id==id
+
+    
    
     })
+
+ 
+    const irALogin = () => {
+      navigate('/login');
+    };
 
     
 
@@ -48,7 +59,8 @@ const DetailCardComp = () => {
    
 
   return (
-    <>
+    <div className="Detail">
+
 
     {newarray.map((elemento) => (
 
@@ -57,15 +69,29 @@ const DetailCardComp = () => {
 <img src={elemento.image} alt={elemento.product_name} style={{ width: '200px', height: 'auto'}} />
 <div style={{ marginTop: '20px' }}></div>{elemento.product_name}
 <div style={{ marginBottom: '20px' }}>{elemento.description}</div>
-<button onClick={()=>{agregarcarrito(elemento)}}>comprar</button>
+
+
+
+{isAuth 
+         ?(
+          <button onClick={()=>{agregarcarrito(elemento)}}>comprar</button>
+        )
+        : (
+          <> 
+          ir a /login al picarle al boton
+          <button onClick={irALogin}>Log in to buy</button>
+          </>
+         )}
+
+<NavLink to={`/`}>cerrar</NavLink>
+
+
+
+
 </li>
 </ul>
 
 ))}
-
-    
-    <NavLink to={`/`}>cerrar</NavLink>
-    
 
     
     
@@ -73,7 +99,7 @@ const DetailCardComp = () => {
 
    
      
-  </>
+  </div>
   )
 }
 

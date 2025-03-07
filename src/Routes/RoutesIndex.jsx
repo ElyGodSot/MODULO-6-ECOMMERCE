@@ -5,6 +5,7 @@ import Cart from "../Pages/Cart";
 import { useAuthContext } from "../Hook/useAuthContext";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
+import Secret from "../Pages/Secret";
 
 export default function RoutesIndex(){
     const {isAuth} = useAuthContext()
@@ -20,6 +21,13 @@ export default function RoutesIndex(){
             element={
             isAuth
                 ? <Cart />
+                : <Login />
+            } />
+            <Route 
+            path='/secret'
+            element={
+            isAuth
+                ? <Secret />
                 : <Login />
             } />
             <Route path='/signup' element={<Signup />} />

@@ -2,6 +2,7 @@ import { useItemsContext } from "../../Hook/useItemsContext"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
+import './CartComp.css'
 
 const CartComp = () => {
     const {list,carrito, SetCarrito}= useItemsContext()
@@ -28,7 +29,7 @@ const CartComp = () => {
   
 
   return (
-    <div>
+    <div className="Carrito">
         
     {carrito.map((elemento,index) => (
 
