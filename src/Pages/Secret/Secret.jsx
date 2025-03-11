@@ -3,12 +3,30 @@ import HeadComp from "../../Components/HeadComp"
 import { useEffect,useState } from "react"
 import Altaproductos from "../../Components/AltaProductos/Altaproductos"
 import { useItemsContext } from '../../Hook/useItemsContext';
+import { getMeUserService } from "../../Service/userService";
 
 
 
 const Secret = () => {
-  const { userPayload } = useAuthContext() // consumimos el contexto
+  const { userPayload } = useAuthContext() 
    const {product,setProduct}= useItemsContext()
+   const [userData, setUserData] = useState({}) 
+  const token = localStorage.getItem('token')
+
+ 
+  useEffect( () => {
+    const fetchUserData = async () =>{
+      try{
+        const response = await getMeUserService(token)
+        if(response.status === 200){
+          setUserData(response.data)
+        }
+      }catch(error){
+        console.log('Ocurrio un error en Dashboard', error)
+      }
+    } 
+    fetchUserData()
+  }, [token])
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
@@ -18,20 +36,38 @@ const Secret = () => {
   return (
     <>
     <HeadComp></HeadComp>
-    <h1> Tipo de usuario 🧑‍🦰</h1>
+    <h1> Mi perfil</h1>
 
 
-    {
-      userPayload?.role === 'ADMIN'
-      ? <h2> Hola Admin! bienvenido a tu perfil 🫲</h2> // lo pueden reemplazar por una card
-      : <h2> Hola Customer! bienvenido a tu perfil 🫲</h2> // lo pueden reemplazar por una card
-    }
+   
     { userPayload?.role === 'ADMIN' && 
     <>
-    <h3> Saludos Admin 🫲</h3>
+    <h3> Saludos Admin 🫲
+    {userData?.first_name && <p>Nombre: {userData.first_name}</p>}
+      {userData?.last_name && <p>Apellido: {userData.last_name}</p>}
+      {userData?.email && <p>Email: {userData.email}</p>}
+      {userData?.gender && <p>Genero: {userData.gender}</p>}
+      {userData?.role && <p>Rol: {userData.role}</p>}
+
+        
+
+
+
+
+    </h3>
+    <h3>Dar producto de alta:</h3>
     <Altaproductos></Altaproductos>
     </> }
-    { userPayload?.role === 'CUSTOMER' && <h3> Saludos Customer 🫲</h3> }
+    { userPayload?.role === 'CUSTOMER' && <h3> 
+
+        {userData?.first_name && <p>Nombre: {userData.first_name}</p>}
+      {userData?.last_name && <p>Apellido: {userData.last_name}</p>}
+      {userData?.email && <p>Email: {userData.email}</p>}
+      {userData?.gender && <p>Genero: {userData.gender}</p>}
+      {userData?.role && <p>Rol: {userData.role}</p>}
+
+       
+    </h3> }
 
 
     <div className="product-cards">
@@ -50,7 +86,7 @@ const Secret = () => {
       </div>
     ))
   ) : (
-    <p>No products available</p> // Mensaje si no hay productos
+    <p>No mas funciones disponibles</p> // Mensaje si no hay productos
   )}
 </div>
     

@@ -18,6 +18,48 @@ const MultipleCardComp = () => {
       setProduct(storedProducts);
     }, []);
 
+    /*useEffect(() => {
+      if (product && Array.isArray(product)){
+      let nuevoarray=[...list,...product]
+      setList(nuevoarray) 
+}}, []);
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+
+function Home() {
+  const [productos, setProductos] = useState([]);
+
+  // Cargar los productos iniciales
+  useEffect(() => {
+    fetch('/ruta-de-tu-api.json')
+      .then((response) => response.json())
+      .then((data) => setProductos(data));
+  }, []);
+
+  return (
+    <div>
+      {productos.map((producto) => (
+        <div key={producto.id}>
+          <h3>{producto.nombre}</h3>
+          <p>{producto.descripcion}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Home;
+
+
+
+
+
+
+*/
 
 
 
@@ -78,4 +120,3 @@ const MultipleCardComp = () => {
 
 export default MultipleCardComp
 
-//<h1><NavLink to={'/'}>Ver especificacion</NavLink></h1>

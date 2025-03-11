@@ -78,7 +78,6 @@ const DetailCardComp = () => {
         )
         : (
           <> 
-          ir a /login al picarle al boton
           <button onClick={irALogin}>Log in to buy</button>
           </>
          )}

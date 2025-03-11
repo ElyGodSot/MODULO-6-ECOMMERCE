@@ -26,8 +26,12 @@ function ItemsProvider ({children}){
     useEffect(() => {
       setLoading(true);
         setTimeout(() => {
+          //let lol=[items]
+          //let lol2=lol.push(product)
           setList(items)
-          setLoading(false) // cambia a false xk ya están cargando las canciones
+          setLoading(false) 
+          console.log(list)
+          console.log(product)
         }, 2000)
       },[location])
 

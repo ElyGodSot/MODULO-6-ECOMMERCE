@@ -22,7 +22,6 @@ function Altaproductos() {
     products.push(newProduct);
     localStorage.setItem('products', JSON.stringify(products));
 
-    // Reset form
     setProduct({
       product_name: '',
       description: '',
@@ -34,7 +33,6 @@ function Altaproductos() {
     });
   };
 
-  // Function to generate a unique ID
   const generateUniqueId = () => {
     return Math.random().toString(36).substr(2, 9);
   };

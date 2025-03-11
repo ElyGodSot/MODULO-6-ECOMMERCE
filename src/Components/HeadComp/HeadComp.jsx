@@ -44,7 +44,7 @@ const handleSearch = (e) => {
          ?(
           <>
            <li className="header__list-item">
-            <NavLink className={({ isActive }) => linkIsActive(isActive)} to="/secret">Secret</NavLink>
+            <NavLink className={({ isActive }) => linkIsActive(isActive)} to="/secret">Mi perfil</NavLink>
           </li>
           <li className="header__list-item">
             <NavLink className={({ isActive }) => linkIsActive(isActive)} to="/carrito">Carrito</NavLink>
